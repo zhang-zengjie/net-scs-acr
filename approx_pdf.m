@@ -23,19 +23,12 @@ function pdf_hat_e = approx_pdf(A, sigma_w, T, eta, N, sigma_hat, is_conv)
     else
         fprintf("Using the conventional method.\n");
     end
-
     fprintf("Computing recursive coefficients...\n");
-    % max_iter = T-1;       % The maximum number of iterations
-    % rng(0);
     
     z = zeros(N, T);
-%    P_bar = [1; zeros(max_iter, 1)];
-%    fprintf("Computing coefficient 1 out of %d\n", T);
-    
-    pdf_hat_e = cell(T, 1);
-    z(:, 1) = sigma_w*randn(N, 1);                                                                        % Sample particles z_1
+    z(:, 1) = sigma_w*randn(N, 1);
+    pdf_hat_e = cell(1, T);                                                                        % Sample particles z_1
     pdf_hat_e{1} = @(x) sum((1/sqrt(2*pi))*exp(-((x - z(:, 1))/sigma_hat).^2/2), 1)/(N*sigma_hat);      % Approximate pdf_hat_e_1
-%    P_bar(2) = integral(pdf_hat_e{1},-eta,eta);                                                         % Calculate the recursive coefficient overline{P}_1
     fprintf("PDF hat_e_1 out of %d generated\n", T);
     
     for i = 1:T-1

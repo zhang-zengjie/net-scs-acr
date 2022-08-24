@@ -15,7 +15,7 @@ function E = compute_acr(Ts, T, P)
 % E(1:Ts): the computed ACR
 
 E_0 = 1;
-E = zeros(Ts, 1);
+E = zeros(1, Ts);
 
 
 for k = 1:Ts
