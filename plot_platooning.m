@@ -3,11 +3,6 @@
 % Author: Zengjie Zhang, Qingchen Liu,
 % Date: 2022.08.21
 
-clear;
-clc;
-
-load('data/data_platooning.mat');
-
 j = find(eta==1);
 
 t_scale = 0:Delta_t:sim_t;
