@@ -1,8 +1,6 @@
 %% PDFs of hat_e and e
 k = 2;
 
-load('data/data_example.mat');
-
 x_plot = -5:0.001:4.99;
 
 pdf_e = pdf_e_a_cell{k};
