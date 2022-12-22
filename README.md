@@ -1,4 +1,4 @@
-# tex_2022_tsp_liu_zhang
+# tex_2022_tsp_zhang_liu
 
 ### The simple numerical example
 
