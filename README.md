@@ -1,4 +1,20 @@
-# tex_2022_tsp_zhang_liu
+# Average Communication Rate for Networked Event-Triggered Stochastic Control Systems
+
+The simulation studies for the publication [https://arxiv.org/abs/2301.05445](https://arxiv.org/abs/2301.05445)
+
+## Requirements
+
+### Operating System
+
+- Windows
+- Linux
+- MacOS
+
+### MATLAB
+
+All versions
+
+## Running Instructions
 
 ### The simple numerical example
 
