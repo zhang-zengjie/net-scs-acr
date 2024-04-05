@@ -1,6 +1,6 @@
 # Average Communication Rate for Networked Event-Triggered Stochastic Control Systems
 
-The simulation studies for the publication [https://arxiv.org/abs/2301.05445](https://arxiv.org/abs/2301.05445)
+The simulation studies for the research work [https://arxiv.org/abs/2301.05445](https://arxiv.org/abs/2301.05445)
 
 ## Requirements
 
