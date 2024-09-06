@@ -5,6 +5,7 @@
 
 clc;
 clear;
+addpath(genpath('.'));
 
 sim_t = 5;                          % Simulation time
 Delta_t = 1;                        % Discrete-time sampling period
@@ -65,3 +66,5 @@ ACR_a_conv = compute_acr(Ts, T, compute_p(P_bar_a_conv));
 ctr = @(x, y, k) -x;
 [ACR_GT, err, ~, ~] = monte_carlo_acr(N_trials, Ts, A, B, sigma_w, x_0, 0, ctr, eta, T);
 
+plot_numerical;
+rmpath(genpath('.'));

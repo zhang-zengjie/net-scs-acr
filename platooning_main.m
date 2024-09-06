@@ -5,6 +5,7 @@
 
 clc;
 clear;
+addpath(genpath('.'));
 
 sim_t = 50;                         % Simulation time
 Delta_t = 0.1;                      % Discrete-time sampling period
@@ -14,8 +15,18 @@ A = 1;
 B = Delta_t;
 sigma_w = 1;    %standard 
 sigma_hat = 0.1;
-%eta = 0.1:0.1:5;
-eta = 1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Select the eta values used to calculate ACR
+
+% Select this setting to see the results for eta=1,2,3,4
+eta = 1:4;
+
+% Select this setting to see the changes of ACR to eta with higher
+% resolution (the computation time will increase as well)
+% eta = 0.1:0.1:5;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 N_trials = 1e4;
 N_ptc = 1e4;
 x_0 = zeros(N_trials, 1);         % Initial state known
@@ -70,3 +81,6 @@ for i = 1:SZ
     % Get the ACR ground truth (GT) using Monte-Carlo simulation
     [ACR_GT(i, :), ~, E_x(i, :), E_p(i, :)] = monte_carlo_acr(N_trials, Ts, A, B, sigma_w, x_0, p_0, ctr, eta(i), T);
 end
+
+plot_platooning;
+rmpath(genpath('.'));
